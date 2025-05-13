@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar and Dropdown Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            background-image: url("img.jpg");
+            height: 800px;
+            background-size: contain;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            font-size: 35px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 40px;
+            color: white;
+            margin-top: 65px;
+            font-weight: lighter;
+        }
+        #left {
+            margin-left: 180px;
+            font-size: 28px;
+            margin-right: auto;
+        }
+        .right {
+            margin-left: 100px;
+        }
+        #right1 {
+            margin-right: 150px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        .title {
+            margin-top: 80px;
+            font-size: 170px;
+            color: aliceblue;
+            font-style: italic;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .para {
+            font-size: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        .search-dropdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .search-bar,
+        .dropdown select {
+            padding: 10px;
+            width: 700px;
+            border: 1px solid #ccc;
+            height: 78px;
+            font-size: 30px;
+            border-left: gray;
+            margin-left: 5px;
+            
+        }
+        .dropdown select {
+            width: 400px;
+            height: 100px;
+            border-right: gray;
+        }
+        h2{
+            font-size: 75px;
+            font-weight: 200;
+            color:rgb(36, 35, 32);
+            margin-left: 180px;
+        }
+        #pop{
+            margin-top: 250px;
+        }
+        .grid{
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            height: 400px;
+        }
+       
+        .images{
+            height: 400px;
+            width: 500px;
+            background-size: cover;
+            background-image: url("download.jpg");
+            margin-left: auto;
+        }
+        .image{
+            margin-left: 100px;
+            background-image: url("images\ \(1\).jpg");
+            height: 400px;
+            width: 500px;
+            background-size: contain;
+        }
+        .about{
+            font-size: 35px;
+        }
+         .box {
+            font-size: 35px;
+            height: 150px;
+            width: 550px;
+            border: 2px solid #afa9a9; 
+            border-radius: 5px; 
+            padding: 10px; 
+            box-sizing: border-box; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 150px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 100px;
+        }
+
+        
+        /* Hover Effect */
+        .box:hover {
+            border-color: #ff5959; /* Change the border color to a shiny effect */
+            box-shadow: 0 0 15px #ff5959; /* Add a glowing effect around the border */
+            cursor: pointer; /* Pointer to indicate interactivity */
+        }
+        .app{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            background-color: rgb(255, 251, 247);
+            font-size: 40px;
+        }
+
+        .img-phone{
+            margin-top: 50px;
+            background-image: url("app.avif");
+            background-size: contain;
+            height: 1300px;
+            
+        }
+        .appButtons{
+            display: grid;
+            height: auto;
+            width: 500px;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .firstButton{
+            background-image: url("store.webp");
+            height:70px;
+            background-size: cover;
+            margin-right: 20px;
+
+
+        }
+        .secButton{
+            background-image: url("play.webp");
+            height:70px;
+            background-size: cover;
+        }
+        #app{
+            margin-top: 150px;
+            margin-left: 1px;
+            font-size: 90px;
+            font-weight: 500;
+            text-align: left;
+        }
+        
+        input[type="radio"] {
+            accent-color: #ff5733; /* Changes radio button color */
+            width: 30px;
+            height: 30px;
+        }
+        #appB{
+            background-color: #ff5959;
+            font-size: 30px;
+            height:100px;
+            width: 300px;
+            border-radius: 10px;
+        } 
+        .search{
+            padding: 10px;
+            width: 550px;
+            border: 2px solid #ccc;
+            height: 78px;
+            font-size: 30px;
+            border-radius: 10px;
+            margin-left: 5px;
+            font-size: 30px;
+        }
+.last{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f7f7;
+}
+        /* Container Styles */
+.dropdown-container {
+    width: 80%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    margin:50px;
+   
+  }
+  
+  /* Header Styles */
+  .dropdown-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .dropdown-arrow {
+    font-size: 20px;
+    color: #666;
+    transition: transform 0.3s ease;
+  }
+
+  /* Content Styles */
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 25px;
+    color: #666;
+    padding: 0 16px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    line-height: 1.8;
+  }
+  
+  /* Checkbox and Content Interaction */
+  .dropdown-checkbox:checked ~ .dropdown-content {
+    max-height: 200px; /* Adjust based on content */
+    padding: 16px;
+  }
+  
+  .dropdown-checkbox:checked + .dropdown-header .dropdown-arrow {
+    transform: rotate(180deg); /* Flip the arrow */
+  }
+  
+.footer-content{
+    background-color: #eeeaea;
+    height: 1000px;
+}
+
+#zomato{
+    font-size: 100px;
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-weight: bolder;
+    margin-left: 150px;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+.columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+}
+h3{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+UL{
+    list-style: none;
+}
+
+li{
+    font-size: 28px;
+    margin-top: 20px;
+    color: #7c7b7b;
+}
+.pic1{
+    width:310px;
+    height:90px;
+    background-image: url("play.webp");
+    background-size: cover;
+    margin-bottom: 50px;
+}
+.pic2{
+    width:310px;
+    height:90px;
+    background-image: url("store.webp");
+    background-size: cover;
+}
+hr{
+    margin-top: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <button id="left">Get the App</button>
+            <button class="right">Investors Relations</button>
+            <button class="right">Add restaurants</button>
+            <button class="right">Log in</button>
+            <button class="right" id="right1">Sign up</button>
+        </div>
+
+        <div class="title">zomato</div>
+        <p class="para">Discover the best food & drinks in Sri Ganganagar</p>
+
+        <!-- Search Bar and Dropdown Side by Side -->
+        <div class="search-dropdown-container">
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <select>
+                    <option value="" disabled selected>Sri Ganganagar</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+            <!-- Search Bar -->
+            <input type="text" class="search-bar" placeholder="Search for restaurant, cuisine or a dish">
+        </div>
+    </div>
+
+
+
+    <div class="grid">
+        <div class="order">
+            <div class="images">
+                
+            </div>
+            <div class="about" id="popu">
+                <h4>Order Online</h4>
+                <p>Stay home and order to your doorstep.</p>
+            </div>
+        </div>
+
+        <div class="order">
+            <div class="image">
+                
+            </div>
+            <div class="about">
+                <h4>Dining</h4>
+                <p>View the city's favourite dining veuues.</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <h2 id="pop">Popular localities in and around <b>Sri Ganganagar</b></h2>
+    <div class="box">Sri Ganganagar Locality<br>380 places</div>
+
+
+    <div class="app">
+        <div class="img-phone"></div>
+        <div class="detail">
+            <h2 id="app">Get the Zomato App</h2>
+            <p id="appP">We will send you a link. Open it to downlaod the app on your phone</p>
+            <form>
+                <input type="radio" class="check" name="check" value="Email">
+                <label for="email">Email</label>
+                <input type="radio" class="check" name="check" value="Phone">
+                <label for="phone">Phone</label>
+            </form>
+            <input type="text" class="search" placeholder="Email">
+            <button id="appB">Share App Link</button>
+            <p>Download app from</p>
+            <div class="appButtons">
+                <div class="firstButton"></div>
+                <div class="secButton"></div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="last">
+        <h2>Explore options near me</h2>
+        <div class="dropdown-container">
+            <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" hidden>
+            <label for="dropdown-toggle" class="dropdown-header">
+            Popular Cuisines Near Me
+              <span class="dropdown-arrow">▲</span>
+            </label>
+            <div class="dropdown-content">
+              <p>Beverages near me · Biryani near me · Burger near me · Cafe near me · Chinese near me</p>
+              <p>Coffee near me · Desserts near me · Ice Cream near me · Mithai near me · Momos near me</p>
+              <p>Mughlai near me · North Indian near me · Pasta near me · Pizza near me · Rolls near me</p>
+              <p>Sandwich near me · Shake near me · South Indian near me · Street near me · Wraps near me</p>
+            </div>
+          </div>
+    
+          <div class="dropdown-container">
+            <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" hidden>
+            <label for="dropdown-toggle" class="dropdown-header">
+              Popular Restaurant types Near Me
+              <span class="dropdown-arrow">▲</span>
+            </label>
+            <div class="dropdown-content">
+              <p>Beverages near me · Biryani near me · Burger near me · Cafe near me · Chinese near me</p>
+              <p>Coffee near me · Desserts near me · Ice Cream near me · Mithai near me · Momos near me</p>
+              <p>Mughlai near me · North Indian near me · Pasta near me · Pizza near me · Rolls near me</p>
+              <p>Sandwich near me · Shake near me · South Indian near me · Street near me · Wraps near me</p>
+            </div>
+          </div>
+    
+          <div class="dropdown-container">
+            <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" hidden>
+            <label for="dropdown-toggle" class="dropdown-header">
+            Top Restaurant Chains
+              <span class="dropdown-arrow">▲</span>
+            </label>
+            <div class="dropdown-content">
+              <p>Beverages near me · Biryani near me · Burger near me · Cafe near me · Chinese near me</p>
+              <p>Coffee near me · Desserts near me · Ice Cream near me · Mithai near me · Momos near me</p>
+              <p>Mughlai near me · North Indian near me · Pasta near me · Pizza near me · Rolls near me</p>
+              <p>Sandwich near me · Shake near me · South Indian near me · Street near me · Wraps near me</p>
+            </div>
+          </div>
+    
+          <div class="dropdown-container">
+            <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox" hidden>
+            <label for="dropdown-toggle" class="dropdown-header">
+            Cities we deliver to
+              <span class="dropdown-arrow">▲</span>
+            </label>
+            <div class="dropdown-content">
+              <p>Beverages near me · Biryani near me · Burger near me · Cafe near me · Chinese near me</p>
+              <p>Coffee near me · Desserts near me · Ice Cream near me · Mithai near me · Momos near me</p>
+              <p>Mughlai near me · North Indian near me · Pasta near me · Pizza near me · Rolls near me</p>
+              <p>Sandwich near me · Shake near me · South Indian near me · Street near me · Wraps near me</p>
+            </div>
+          </div>
+          
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div id="zomato">zomato</div>
+            <div class="columns">
+                <div class="lefft">
+                    <h3>ABOUT ZOMATO</h3>
+                    <ul>
+                        <li>Who We Are</li>
+                        <li>Blog</li>
+                        <li>Work With Us</li>
+                        <li>Investor Relations</li>
+                        <li>Report Fraud</li>
+                        <li>Press Kit</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="lefftM">
+                    <h3>ZOMAVERSE</h3>
+                    <ul>
+                        <li>Who We Are</li>
+                        <li>Blog</li>
+                        <li>Work With Us</li>
+                        <li>Investor Relations</li>
+                        <li>Report Fraud</li>
+                        <li>Press Kit</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="righttM">
+                    <h3>FOR RESTAURANTS</h3>
+                    <ul>
+                        <li>Who We Are</li>
+                        <li>Blog</li>
+                        <li>Work With Us</li>
+                        <li>Investor Relations</li>
+                        <li>Report Fraud</li>
+                        <li>Press Kit</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="rightt">
+                    <h3>LEARN MORE</h3>
+                    <ul>
+                        <li>Who We Are</li>
+                        <li>Blog</li>
+                        <li>Work With Us</li>
+                        <li>Investor Relations</li>
+                        <li>Report Fraud</li>
+                        <li>Press Kit</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="rightest">
+                    <h3>SOCIAL LINKS</h3>
+                    <div class="pic1"></div>
+                    <div class="pic2"></div>
+                </div>
+            </div>
+<hr>
+
+        </div>
+    </footer>
+    
+</body>
+</html>
