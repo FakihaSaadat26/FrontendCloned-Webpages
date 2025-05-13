@@ -1,0 +1,258 @@
+
+.navbar{
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    color:#ffffff;
+    justify-content: space-evenly;
+    font-size: 35px;
+    color:#BBBBBB;
+    z-index: 10;
+    
+  
+}
+button{
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    color:#ffffff;
+    justify-content: space-evenly;
+    font-size: 35px;
+    color:#BBBBBB;
+    border: none
+}
+button:hover{
+    text-decoration: underline;
+    color:white;
+    cursor: pointer;
+}
+.navbar2{
+    height: 65px;
+    background-color: #555555;
+    font-size: 32px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:#EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.main{
+display: grid;
+background-color: #555555;
+margin-top: 20px;
+
+}
+.loot{
+    height:60rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-image: url("loot.webp");
+    background-size: cover;       
+}
+.dock{
+    height:60rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-image: url("razerdock.webp");
+    background-size: cover;    
+}
+.gg{
+    height:60rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-image: url("razer.webp");
+    background-size: cover;
+}
+.wiper{
+    height: 60rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-image: url("razerm.webp");
+    background-size: cover;
+}
+.head{
+    margin-top: 13px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 60rem;
+    background-image: url("razerh.webp");
+    background-size: cover;
+}
+h1,h2,h3{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-size: 75px;
+}
+h2{
+    font-size: 55px;
+    font-weight: 500;
+}
+h3{
+    font-size: 35px;
+    font-weight: 550;
+}
+.onee{
+    height: 40px;
+    width: auto;
+    margin-left: 47%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 800;
+    background-color:darkorange;
+}
+
+.one{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1;
+    margin-top: 10px;
+    gap: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.oneone{
+background-image: url("razeroneone.webp");
+background-size: contain;
+height:60rem
+
+}
+.onetwo{
+background-image: url("razeronetwo.webp");
+background-size: cover;
+height: 60rem;
+}
+
+.twoone{
+    background-image: url("razertwoone.webp");
+    background-size: cover;
+    height: 60rem;
+}
+.twotwo{
+    background-image: url("razertwotwo.webp");
+    background-size: contain;
+    height: 60rem;
+}
+.threeone{
+    background-image: url("razerthreeone.webp");
+background-size: cover;
+height: 60rem;
+}
+.threetwo{
+    background-image: url("razerthreetwo.webp");
+background-size: cover;
+height: 60rem;
+}
+.black{
+    color:#000000
+}
+
+#footerCon{
+    background-color: #111;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+    margin: 15px;
+}
+footer{
+    display: grid;
+
+}
+h4{
+    margin-bottom: 10px;
+    color: #BBBBBB;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+li{
+    color:#8f8d8d;
+    font-size: 1.6rem;
+    margin: 13px;
+    text-align: center;
+    list-style-type: none;
+}
+li:hover{
+    text-decoration: underline;
+    color:white;
+    cursor:pointer;
+}
+.shop{
+    display: grid;
+    grid-template-rows: 1;
+}
+
+.gamee{
+    color: rgb(33, 172, 33);
+    font-weight: 500;
+    font-size: 35px;
+}
+hr{
+    color: #8f8d8d;
+}
+
+.icons{
+    display: grid;
+    font-size: 45px;
+    justify-content: center;
+}
+i{
+    border-color: #8f8d8d;
+    border: 3px solid #8f8d8d; /* Thickness and color of the circle */
+    border-radius: 50%; /* Makes it a perfect circle */
+    padding: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* Sliding page container */
+.sliding-page {
+    position: absolute;
+    top: -100%; /* Start off the screen from the top */
+    left: 0; /* Align to the left */
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for top slide */
+    transition: top 0.4s ease; /* Smooth sliding effect */
+}
+.store:hover + .sliding-page {
+    top: 165px; /* Slide into view from the top */
+}
+.store {
+    z-index: 2;
+    position: relative;
+}
+/* Sliding page content */
+.sliding-page-content {
+    padding: 20px;
+}
+
+.sliding-page-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.sliding-page-content p {
+    color: #666;
+    line-height: 1.6;
+} 
